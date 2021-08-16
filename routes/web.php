@@ -14,16 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 $appName = "Laravel 8";
-Route::view('/', 'home', ['appName' => $appName]);
+Route::view('/', 'home');
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/contact', function () {
+    return view('contact');
+});
 
-Route::get('/profile', function () {
-    $page = "Profile";
-    
-    return view('profile', [
-        'page' => $page
-    ]);
+Route::get('/post/first-post', function () {
+    return view('post.first-post');
 });
